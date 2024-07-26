@@ -5,13 +5,12 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Heartbeat{
 
-    private ConcurrentHashMap<SocketChannel, Long> heartbeats = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<SocketChannel, Long> heartbeats;
 
-    public Heartbeat(ConcurrentHashMap<SocketChannel, Long> client) throws IOException {
+    public Heartbeat(ConcurrentHashMap<SocketChannel, Long> client) {
         this.heartbeats = client;
     }
 
